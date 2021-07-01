@@ -43,8 +43,6 @@ const PokemonGrid = () => {
   const handlePaginationRight = (selectedPage) => {
     setActivePage(selectedPage);
     let nextOffset = selectedPage * limit;
-
-    console.log(offset);
     if (offset < -1) {
       let url = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=${limit}`;
       getPokemons(url);
@@ -59,7 +57,6 @@ const PokemonGrid = () => {
   const handlePaginationLeft = (selectedPage) => {
     let prevOffset = offset - limit * 2;
     setOffset(prevOffset - limit);
-    console.log(`OFFSET: ${offset} - ${limit} = ${prevOffset}`);
     if (offset < 18) {
       let url = `https://pokeapi.co/api/v2/pokemon/?offset=0&limit=${limit}`;
       getPokemons(url);

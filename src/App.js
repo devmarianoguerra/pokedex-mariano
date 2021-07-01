@@ -1,13 +1,12 @@
-import './App.css';
-import Layout from './components/Layout'
-import PokemonGrid from './components/PokemonGrid'
-import StatsChart from './components/StatsChart'
+import "./App.css";
+import Layout from "./components/Layout";
+import PokemonGrid from "./components/PokemonGrid";
 
 function App() {
   return (
     <div className="App">
       <Layout>
-        <PokemonGrid/>
+        <PokemonGrid />
       </Layout>
     </div>
   );

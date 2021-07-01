@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { PaginationWrapper, PagButton } from "../styles/footer_style";
 

@@ -1,17 +1,24 @@
-import React, { PureComponent } from 'react';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
-
+import React, { PureComponent } from "react";
+import {
+  Radar,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  ResponsiveContainer,
+} from "recharts";
 
 export default class RadarStats extends PureComponent {
-
   render() {
+    const data = [];
 
-      const data = []
+    this.props.stats.stats.map((value) => {
+      return data.push({ stats: value });
+    });
 
-      
-      this.props.stats.stats.map(value => {
-          data.push({stats: value})
-      })
+    data.forEach((element) => {
+      return (element.name = this.props.stats.name.map((stat) => stat));
+    });
 
     return (
       <ResponsiveContainer width="100%" height="100%">
@@ -19,7 +26,13 @@ export default class RadarStats extends PureComponent {
           <PolarGrid />
           <PolarAngleAxis dataKey="subject" />
           <PolarRadiusAxis />
-          <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+          <Radar
+            name="Mike"
+            dataKey="A"
+            stroke="#8884d8"
+            fill="#8884d8"
+            fillOpacity={0.6}
+          />
         </RadarChart>
       </ResponsiveContainer>
     );

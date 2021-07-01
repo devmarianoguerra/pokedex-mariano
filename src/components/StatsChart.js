@@ -14,11 +14,11 @@ export default class StatsChart extends PureComponent {
     const data = [];
 
     this.props.stats.stats.map((value) => {
-      data.push({ stats: value });
+      return data.push({ stats: value });
     });
 
     data.forEach((element) => {
-      element.name = this.props.stats.name.map((stat) => stat);
+      return (element.name = this.props.stats.name.map((stat) => stat));
     });
 
     return (
