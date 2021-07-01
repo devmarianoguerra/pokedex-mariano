@@ -1,22 +1,10 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 import PokemonCard from "./PokemonCard";
 import { Spinner } from "react-bootstrap";
 import { InputGroup, FormControl } from "react-bootstrap";
 import { AiOutlineSearch } from "react-icons/ai";
 import Footer from "./Footer";
-
-const InputContainer = styled.div`
-  margin: 2rem 30rem;
-`;
-
-const PokemonContainer = styled.section`
-  height: 100%;
-  padding: 5rem;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1rem;
-`;
+import { InputContainer, PokemonContainer } from "../styles/pokemonGrid_style";
 
 const PokemonGrid = () => {
   const [pokemons, setPokemons] = useState([]);
@@ -69,7 +57,7 @@ const PokemonGrid = () => {
   };
 
   const handlePaginationLeft = (selectedPage) => {
-    let prevOffset = offset - limit;
+    let prevOffset = offset - limit * 2;
     setOffset(prevOffset - limit);
     console.log(`OFFSET: ${offset} - ${limit} = ${prevOffset}`);
     if (offset < 18) {
